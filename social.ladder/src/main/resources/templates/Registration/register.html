@@ -3,6 +3,8 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta th:name="_csrf" th:content="${_csrf.token}"/>
+    <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
 </head>
 <body>
     <form method="POST" action="/register">
@@ -16,6 +18,7 @@
         <input name="passwordConfirmation" id="passwordConfirmation" type="password" />
         <div th:text="${passwordError}">sd</div>
         <button>Submit</button>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
     </form>
 </body>
 </html>
