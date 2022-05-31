@@ -52,6 +52,7 @@ public class RegisterController {
             redirectAttributes.addFlashAttribute("passwordError", registrationResponse.getPasswordError());
             return new RedirectView("/register");
         } else {
+
             return new RedirectView("/register/success");
         }
     }

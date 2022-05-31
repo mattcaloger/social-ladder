@@ -10,10 +10,10 @@ import java.util.Collection;
 
 public class UserDetail implements UserDetails {
 
-    private String userName;
+    private String username;
 
-    public UserDetail(String userName) {
-        this.userName = userName;
+    public UserDetail(String username) {
+        this.username = username;
     }
 
     public UserDetail() {
@@ -35,7 +35,7 @@ public class UserDetail implements UserDetails {
 
     @Override
     public String getUsername() {
-        return this.userName;
+        return this.username;
     }
 
     @Override
