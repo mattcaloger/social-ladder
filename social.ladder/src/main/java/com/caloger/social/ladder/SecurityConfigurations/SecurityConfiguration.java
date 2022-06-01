@@ -18,9 +18,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailService userDetailService;
 
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailService);
+        auth.userDetailsService(userDetailService).passwordEncoder(getPasswordEncoder());
     }
 
     @Override
@@ -30,8 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and().authorizeRequests()
             .antMatchers("/admin").hasRole("ADMIN")
             .antMatchers("/user").hasAnyRole("ADMIN", "USER")
-            .antMatchers("/", "/register", "/login").permitAll()
-            .and().formLogin();
+            .antMatchers("/", "/register", "/login").permitAll().and().formLogin();
     }
 
     @Bean

@@ -1,3 +1,4 @@
 
 social.ladder/src/main/resources/application.properties
 *.db
+*.properties

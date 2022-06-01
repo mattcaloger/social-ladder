@@ -13,7 +13,7 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String userName;
+    private String username;
     private String password;
     private boolean active;
     private UserRole role;
@@ -21,23 +21,23 @@ public class UserModel {
     public UserModel() {
     }
 
-    public UserModel(long id, String userName, String password, boolean active, UserRole role) {
+    public UserModel(long id, String username, String password, boolean active, UserRole role) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.active = active;
         this.role = role;
     }
 
-    public UserModel(String userName, String password, boolean active, UserRole role) {
-        this.userName = userName;
+    public UserModel(String username, String password, boolean active, UserRole role) {
+        this.username = username;
         this.password = password;
         this.active = active;
         this.role = role;
     }
 
     public UserModel(String username, String password) {
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.active = true;
         this.role = UserRole.USER;
@@ -51,12 +51,12 @@ public class UserModel {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -87,7 +87,7 @@ public class UserModel {
     public String toString() {
         return "UserModel{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", active=" + active +
                 ", role=" + role +
