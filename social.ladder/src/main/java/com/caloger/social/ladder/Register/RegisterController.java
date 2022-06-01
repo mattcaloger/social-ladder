@@ -1,5 +1,8 @@
 package com.caloger.social.ladder.Register;
 
+import com.caloger.social.ladder.Users.UserModel;
+import com.caloger.social.ladder.Users.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,6 +19,13 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
+
+    private UserService userService;
+
+    @Autowired
+    public RegisterController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("")
     public ModelAndView RegistrationForm(ModelMap model, HttpServletRequest httpServletRequest) {
@@ -52,7 +62,7 @@ public class RegisterController {
             redirectAttributes.addFlashAttribute("passwordError", registrationResponse.getPasswordError());
             return new RedirectView("/register");
         } else {
-
+            userService.createUser(new UserModel(registrationRequest.getEmail(), registrationRequest.getPassword()));
             return new RedirectView("/register/success");
         }
     }

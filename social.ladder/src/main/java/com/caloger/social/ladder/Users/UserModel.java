@@ -36,6 +36,13 @@ public class UserModel {
         this.role = role;
     }
 
+    public UserModel(String username, String password) {
+        this.userName = userName;
+        this.password = password;
+        this.active = true;
+        this.role = UserRole.USER;
+    }
+
     public long getId() {
         return id;
     }

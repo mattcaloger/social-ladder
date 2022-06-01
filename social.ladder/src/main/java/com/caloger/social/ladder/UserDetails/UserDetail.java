@@ -11,6 +11,7 @@ import java.util.Collection;
 public class UserDetail implements UserDetails {
 
     private String username;
+    private String password;
 
     public UserDetail(String username) {
         this.username = username;
@@ -30,7 +31,7 @@ public class UserDetail implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "password";
+        return this.password;
     }
 
     @Override
