@@ -1,8 +1,17 @@
 package com.caloger.social.ladder.Register;
 
+import com.sun.istack.NotNull;
+
 public class RegistrationRequest {
+
+    @NotNull
+    @NotBlank
     private String email;
+
+    @NotNull
     private String password;
+
+    @NotNull
     private String passwordConfirmation;
 
     public RegistrationRequest() {
