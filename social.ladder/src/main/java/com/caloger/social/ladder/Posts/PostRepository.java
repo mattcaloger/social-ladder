@@ -1,6 +1,13 @@
 package com.caloger.social.ladder.Posts;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface PostRepository extends CrudRepository<PostModel, Long> {
+import java.util.List;
+
+public interface PostRepository extends PagingAndSortingRepository<PostModel, Long> {
+
+    @Query("SELECT * FROM PostModel ")
+    public List<PostModel> getRecentPosts;
 }
