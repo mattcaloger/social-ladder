@@ -7,7 +7,4 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.List;
 
 public interface PostRepository extends PagingAndSortingRepository<PostModel, Long> {
-
-    @Query("SELECT * FROM PostModel ")
-    public List<PostModel> getRecentPosts;
 }
