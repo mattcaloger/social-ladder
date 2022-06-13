@@ -3,6 +3,7 @@ package com.caloger.social.ladder.Posts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
@@ -27,4 +28,8 @@ public class PostController {
         postService.deletePost(id);
     }
 
+    @PostMapping("/create")
+    public PostModel createPost(PostModel postModel) {
+        return postService.createPost(postModel);
+    }
 }
