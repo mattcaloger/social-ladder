@@ -1,6 +1,7 @@
 package com.caloger.social.ladder.Posts;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,6 +20,11 @@ public class PostController {
     @GetMapping("/")
     public Optional<PostModel> getPost(Long Id) {
         return postService.readPost(Id);
+    }
+
+    @DeleteMapping("/delete/:id")
+    public void deletePost(Long id) {
+        postService.deletePost(id);
     }
 
 }

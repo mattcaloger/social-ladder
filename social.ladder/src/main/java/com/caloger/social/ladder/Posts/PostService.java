@@ -30,4 +30,12 @@ public class PostService {
     public PostModel updatePost(PostModel postModel) {
         return this.updatePost(postModel);
     }
+
+    public void deletePost(PostModel postModel) {
+        this.deletePost(postModel);
+    }
+
+    public void deletePost(Long id) {
+        this.deletePost(id);
+    }
 }
