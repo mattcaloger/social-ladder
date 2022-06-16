@@ -5,7 +5,6 @@ import com.sun.istack.NotNull;
 public class RegistrationRequest {
 
     @NotNull
-    @NotBlank
     private String email;
 
     @NotNull
