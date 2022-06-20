@@ -63,7 +63,6 @@ public class RegisterController {
             redirectAttributes.addFlashAttribute("passwordError", registrationResponse.getPasswordError());
             return new RedirectView("/register");
         } else {
-
             userService.createUser(new UserModel(registrationRequest.getEmail(), registrationRequest.getPassword()));
             return new RedirectView("/register/success");
         }
