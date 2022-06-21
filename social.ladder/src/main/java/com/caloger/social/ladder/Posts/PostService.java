@@ -23,7 +23,7 @@ public class PostService {
         return this.postRepository.findById(id);
     }
 
-    public Iterable<PostModel> readAllPost() {
+    public Iterable<PostModel> readAllPosts() {
         return this.postRepository.findAll();
     }
 
